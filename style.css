@@ -1,0 +1,109 @@
+html{
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  align-items: center;
+  background: linear-gradient(pink, rgb(244, 137, 244), rgb(244, 185, 185));
+  display: flex;
+  font-family: 'Dosis', sans-serif;
+  font-display: swap;
+  height: inherit;
+  justify-content: center;
+}
+
+.wrapper{
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: #000;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  flex-basis: 400px;
+  height: 5%00px;
+  padding: 20px 35px;
+}
+
+.screen{
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color:#000;
+  font-size: 35px;
+  overflow:auto;
+  padding: 15px;
+  text-align: right;
+  width: 100%; 
+}
+
+.calc-button-row{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin: 5% 0;
+}
+
+.calc-button{
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  font-size: 20px;
+  flex-basis: 22%;
+  font-family: inherit;
+  font-size: 22px;
+  padding: 10px 20px;
+  margin-bottom: 0;
+  height: 55px;
+}
+
+.calc-button:last-child {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.75);
+  border:1.5px solid rgb(243, 243, 243);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 27px;
+  padding: 10px 20px;
+  background:rgb(244, 137, 221)
+}
+
+.calc-button:last-child:hover{
+  background-color: white;
+  color: rgb(210, 82, 174);
+}
+
+.calc-button:hover{
+  background-color: rgb(255, 219, 255);
+  transition: 0.1s;
+}
+
+.calc-button:active{
+  background-color: rgb(255, 219, 255);
+  box-shadow: inset 0px 0px 5px rgba(250, 55, 172, 0.855);
+}
+
+.double{
+  flex-basis: 48%;
+}
