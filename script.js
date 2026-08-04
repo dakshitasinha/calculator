@@ -101,11 +101,13 @@ function flushOperation(intBuffer){
 }
 
 function handleNumber(numberString){
-  if(buffer==="0"){
-    buffer=numberString;
-  } else{
-    buffer+=numberString;
-  }
+    if(buffer === "0"){
+        buffer = numberString;
+    } else if(buffer === "-0"){
+        buffer = "-" + numberString;
+    } else{
+        buffer += numberString;
+    }
 }
 
 function init(){
@@ -124,12 +126,13 @@ function init(){
 
 function handlePlusMinus(){
     if(buffer === "0"){
+        buffer = "-0";
         return;
     }
 
     if(buffer.startsWith("-")){
         buffer = buffer.substring(1);
-    }else{
+    } else{
         buffer = "-" + buffer;
     }
 }
