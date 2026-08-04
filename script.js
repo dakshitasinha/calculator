@@ -33,7 +33,7 @@ function handleSymbol(symbol){
 
       history += " " + buffer;
 
-      flushOperation(parseInt(buffer));
+      flushOperation(parseFloat(buffer));
 
       previousOperator = null;
       buffer = runningTotal.toString();
@@ -55,15 +55,25 @@ function handleSymbol(symbol){
     case '÷':
       handleMath(symbol);
       break;
+
+      case '.':
+    handleDecimal();
+    break;
+
+    case '±':
+    handlePlusMinus();
+    break;
   }
 }
+
+ 
 
 function handleMath(symbol){
   if(buffer === "0"){
     return;
   }
 
-  const intBuffer = parseInt(buffer);
+const intBuffer = parseFloat(buffer);
 
   if(runningTotal === 0){
     runningTotal = intBuffer;
@@ -102,6 +112,26 @@ function init(){
   document.querySelector('.calc-buttons').addEventListener('click',function(event){
     buttonClick(event.target.innerText);
   });
+}
+
+ function handleDecimal(){
+    if(buffer.includes(".")){
+        return;
+    }
+
+    buffer += ".";
+}
+
+function handlePlusMinus(){
+    if(buffer === "0"){
+        return;
+    }
+
+    if(buffer.startsWith("-")){
+        buffer = buffer.substring(1);
+    }else{
+        buffer = "-" + buffer;
+    }
 }
 
 init();
