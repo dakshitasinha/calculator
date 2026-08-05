@@ -11,21 +11,60 @@ html{
 }
 
 body{
-  display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100%;
-    background:#d8cff4;
-    font-family:"Silkscreen", monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Silkscreen", monospace;
+    gap: 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 0%, transparent 20%),
+        radial-gradient(circle at 80% 30%, rgba(42, 24, 57, 0.2) 0%, transparent 25%),
+        radial-gradient(circle at 30% 80%, rgba(50, 23, 95, 0.236) 0%, transparent 30%),
+        linear-gradient(135deg, #1d1233 0%, #3d2469 40%, #452183 70%, #5d27a3 100%);
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle, white 1px, transparent 1px) 20px 30px/120px 120px,
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px) 70px 90px/180px 180px,
+        radial-gradient(circle, #ffdfff 1.5px, transparent 1.5px) 40px 80px/220px 220px;
+
+    opacity: .7;
+}
+
+.heading{
+    text-align: center;
+}
+
+.heading h1{
+    font-size: 38px;
+    color: #eaddf4;
+    text-shadow:
+        3px 3px 0 #a41ed9,
+        6px 6px 0 #830b7d;
+    margin-bottom: 35px;
 }
 
 .wrapper{
     width:400px;
-    background:#b79bd7;
+
+    background:
+        linear-gradient(rgba(17, 14, 21, 0.425), rgba(28, 17, 46, 0.616)),
+        url("assets/images/background.png") center center/cover no-repeat,
+        #b79bd7;
+
     border:6px solid #000;
-    box-shadow:
-        8px 8px 0 #6f5688;
+    box-shadow:8px 8px 0 #3b2054;
     padding:20px;
+    position:relative;
 }
 
 .screen-container{
