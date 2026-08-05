@@ -8,14 +8,26 @@ let history = "";
 const screen = document.querySelector(".screen");
 const historyScreen = document.querySelector(".history");
 
+const clickSound = new Audio("assets/sounds/click.mp3");
+clickSound.preload = "auto";
+clickSound.load();
+
+function playClick() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
 function buttonClick(value){
+  playClick();
+
   if(isNaN(value)){
     handleSymbol(value);
   } else{
     handleNumber(value);
   }
- screen.innerText = buffer;
-historyScreen.innerText = history;
+
+  screen.innerText = buffer;
+  historyScreen.innerText = history;
 }
 
 function handleSymbol(symbol){
